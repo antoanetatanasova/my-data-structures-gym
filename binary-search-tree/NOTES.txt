@@ -1,0 +1,95 @@
+==== Tree Data Structures ====
+
+=== Intro ===
+Refer to trees as data structures OR abstract data types.
+- Trees dictate how to organize data, but also be backed as arrays.
+- Binary search tree is the type mostly used in practice
+
+
+=== Fundamentals Theory and Terminology ===
+- Every item in a tree is a Node
+- The Node can have children
+- Each Node that is not root can have one and only one parent
+- Special node - the top of the tree - is called Root - that doesn't have a parent. Each tree can have only
+one Root.
+- Each node is Descendant of its parent.
+- Example of tree is Java. Each Class can expend only one Class and have only one parent. The root in Java hierarchy is
+Object.
+- The arrows are called Edge
+- The node without children is a Leaf
+- Subtree - a given Child Node and its descendants
+- Path - the sequence of Nodes require to go from one Node to another
+- We cannot have a Path that crosses a Node more than once and we cannot have a circle Paths - this is a defining
+characteristics of a tree
+- Root Path - How to go from a Node to Root
+- The Depth of a Node is the number of Edges from the Node to the root
+- Height of the Node - the number of edges of the longest path from the Node to a Leaf
+- Leaf Nodes have a Height of Zero
+- The height of a tree is the height of the Root
+- The Level is the Nodes that are in the same Depth
+- A Node can be ancestor on another Node only if they are in the same Path
+
+
+=== Deep Dive into Binary Search Trees ===
+- Every Node has 0, 1, or 2 children
+- Children are referred as left and right child
+- Used in practice
+- Binary tree is complete if every level except the last level has 2 children and children are as to the left as
+possible (A complete tree is even when the last Node has only one child to the left)
+- Full binary tree - every node in the tree, except from the leaf has two children
+- Binary search trees are popular, because insertions, deletions and retrievals are performed in O(logn) time
+- The left child has a smaller value than its parent
+- The right child always has a larger value than its parent
+- Everything to the left of the root is less than the value of the root and everything to the right is grater than the
+value of the root
+- Because of that, we can do a binary searches
+- How to handle duplicates: we should chose an approach:
+-- 1 way to handle duplicates: do not allow duplicates
+-- 2nd way to handle duplicates: always store duplicates either in the left subtree, or in the right subtree
+-- 3rd way to handle duplicates: Have a counter for each value and increment it, instead if insert the duplicate, just
+insert the counter
+- The order we insert values affects the way that tree looks like
+- Insertions go to the first empty spot
+- Follow the edges down to the left to get the min value
+- Follow the edges down to the right to get the max value
+- Try to keep the tree as balanced as possible - left number of Nodes to be as equal to the right number of nodes as
+possible
+
+
+=== Implementing Insertions ===
+- When insert(int value) method is called it comperes the value with the value of the Node on which is was called
+
+=== Traversal Techniques: In-Order, Pre-Order and Post-Order ===
+- Level Traversal - Visit Root, then visit fist level from left to right etc.
+- Pre-order - Visit the root of every subtree first - root->left->right
+- Post-order - Visit the root of every subtree last - left->right->root
+- In-order - visit left child, then root, then right child - left->root->right
+
+=== Implementing Get, Min, and Max Operations ===
+- Get: If data==value, otherwise check if value<data or value>data and then we are traveling the relevant subtree
+- Min: we are travelling left edges: if node doesn't have left child, we've found the min value
+- Max: we are travelling right edges: if node doesn't have right child, we've found the max vale
+
+=== Deletion: Zero and One Child ===
+- If Node is a Leaf - it is safe to just remove it
+- If Node has one child - it is safe to replace the Node with its child, because everything in the left subtree is
+smaller that the subtree root, and everything is the right subtree is bigger than the right subtree
+
+
+=== Deletion: Two Children ===
+- If Node has two children - either take the largest value of the left subtree or the smallest value from the right
+subtree - chose one approach and stick to it
+- If the replacement node has a child, it just replaces the node in the tree
+
+
+=== Tree Related Classes and Structures Within Java JDK ===
+Class TreeMap<K,V>
+
+
+=== Implementing Pre-Order Traversal ===
+We visit the root first, then left subtree, then right subtree. For each subtree also visit the root first, then
+its left subtree, then its right subtree.
+
+
+=== Practice ===
+
