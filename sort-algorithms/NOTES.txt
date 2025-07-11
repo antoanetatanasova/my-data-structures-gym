@@ -1,0 +1,9 @@
+=== Sort Algorithms ===
+
+=== Bubble Sort ===
+We need an index (this is the unsortedPartitionIndex) to traverse the array from left to right. It splits the array into
+ sorted and unsorted partition. On
+the first traversal it is the length of the array. Each following traversal we decrement the index with 1;
+In-place algorithm - logical algorithm - we do not create another array.
+Time complexity is quadratic O(n^2)
+Algorithm degrades quickly

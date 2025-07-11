@@ -1,0 +1,39 @@
+=== Java Arrays ===
+
+=== Quick Review ===
+When you create an array you have to specify the size. Array is not dynamic - you cannot change the size. This give some
+ disadvantages to the array compare to other data structures;
+ Array is zero based.
+
+=== Big-O Notation - Understanding Time Complexity ===
+Hardware is influencing the running time of the implementation. Memory today is cheap, so we need to consider mostly
+time of the execution.
+Time complexity / progression
+= O(1)     - Constant
+= O(logn)  - Logarithmic
+= O(n)     - Linear
+= O(nlogn) - n log-star n
+= O(n^2)   - Quadratic
+
+=== Arrays in Memory: Storage and Access ===
+- Contiguous block in memory
+- Every element occupies the same amount of memory, e.g. int occupies 4 bites in memory => int element of an array
+occupies 4 bites in memory.
+- When we work with Objects, in the array we store reference to the Object, not the Object itself, e.g. array of strings
+- if we know the index of an element, the time to retrieve the element will be the same, no metter where it is in the
+array
+
+=== Array Operations: Big-O Time Complexity ===
+For Big-O we always consider the worst case.
+Retrievals when we know what index is: 0(1) - constant
+Retrievals when we don't know what index is: 0(n) - linear - we have to find the item first, and in the worst case we
+loop the entire array.
+Array Time complexity:
+- Retrieve with index - O(1) - Constant time
+- Retrieve without index - O(n) - Linear time
+- Add an element to a full array - O(n)
+- Add an element to the end of an array (has space) - O(1)
+- Insert ot update an element at a specific index - O(1)
+- Delete an element by setting it to null - O(1)
+- Delete an element by shifting element - O(n)
+
